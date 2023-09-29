@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Formulario</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Style-->
+    <link rel="stylesheet" href="style.css">
+    <!--Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container mt-5">
+        <div class="card text-start">
+            <div class="card-header">
+                <h1>Payment form example</h1>
+            </div>
+            <div class="card-body">
+                <form class="row g-3">
+                    <div class="alert alert-danger text-start mb-0" role="alert"> <!-- Alerta -->
+                        <b>Some fields are missing</b>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="numeroTarjeta" class="form-label"><b>Card #</b></label> <!-- Tarjeta de Credito -->
+                        <input type="text" class="form-control" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cvc" class="form-label"><b>CVC</b></label> <!-- CVC de la T de Cto. -->
+                        <input type="text" class="form-control" id="cvc" placeholder="XXX" maxlength="3">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="amount" class="form-label"><b>Amount</b></label> <!-- Amount de dinero -->
+                        <div class="input-group">
+                            <span class="input-group-prepend">
+                                <div class="dollar-symbol"><b>$</b></div>
+                            </span>
+                            <input type="number" class="form-control" id="cantidad" name="cantidad" step="0.01"
+                                placeholder="Amount" min="0.01" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="name" class="form-label"><b>First Name</b></label>
+                        <input type="text" class="form-control" id="inputName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label"><b>Last Name</b></label>
+                        <input type="text" class="form-control" id="inputLastName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label"><b>City</b></label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputState" class="form-label"><b>State</b></label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Pick a state</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputZip" class="form-label"><b>Postal Code</b></label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-3">
+                        <label class="form-label" for="weAccept"><b>We accept:</b></label>
+                        <div class="form-group d-flex flex-column">
+                            <!-- Envuelve el label y los botones en un contenedor de columna -->
+                            <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <!-- Grupo de botones -->
+                                <label class="btn btn-secondary">
+                                    <input type="radio" checked /> <!-- Check checked -->
+                                    <i class="fa-brands fa-cc-mastercard"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" autocomplete="off" /> <!-- Check -->
+                                    <i class="fa-brands fa-cc-visa"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" autocomplete="off" /> <!-- Check -->
+                                    <i class="fa-brands fa-cc-diners-club"></i>
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" autocomplete="off" /> <!-- Check -->
+                                    <i class="fa-brands fa-cc-amex"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 ms-auto">
+                        <label class="form-label " for="message"><b>Message</b></label>
+                        <textarea class="form-control" id="message" type="text" style="height: 6rem;"
+                            data-sb-validations="required"></textarea>
+                        <p>Add any notes here</p>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2 mb-2">
+                    <button class="btn btn-secondary btn btn-lg" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="button">Button</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+        integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
